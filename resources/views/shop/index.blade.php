@@ -101,43 +101,43 @@
             <div class="art" style="aspect-ratio: 1/1; overflow: hidden; border-radius: 18px;">
                 <img src="/storage/products/set_lingerie.jpg" alt="ست لباس زیر" style="width: 100%; height: 100%; object-fit: cover; transition: transform .4s;">
             </div>
-            <span style="font-weight: 700; margin-top: 8px;">ست شورت و سوتین</span>
+            <span>ست شورت و سوتین</span>
         </a>
         <a href="{{ route('home', ['c' => 'سوتین']) }}" class="tile">
             <div class="art" style="aspect-ratio: 1/1; overflow: hidden; border-radius: 18px;">
                 <img src="/storage/products/bra_lace.jpg" alt="سوتین و نیم‌تنه" style="width: 100%; height: 100%; object-fit: cover; transition: transform .4s;">
             </div>
-            <span style="font-weight: 700; margin-top: 8px;">سوتین و نیم‌تنه</span>
+            <span>سوتین و نیم‌تنه</span>
         </a>
         <a href="{{ route('home', ['c' => 'شورت زنانه']) }}" class="tile">
             <div class="art" style="aspect-ratio: 1/1; overflow: hidden; border-radius: 18px;">
                 <img src="/storage/products/panty_pink.jpg" alt="شورت زنانه" style="width: 100%; height: 100%; object-fit: cover; transition: transform .4s;">
             </div>
-            <span style="font-weight: 700; margin-top: 8px;">شورت زنانه (نخی و لیزری)</span>
+            <span>شورت زنانه (نخی و لیزری)</span>
         </a>
         <a href="{{ route('home', ['c' => 'بادی']) }}" class="tile">
             <div class="art" style="aspect-ratio: 1/1; overflow: hidden; border-radius: 18px;">
                 <img src="/storage/products/bodysuit.jpg" alt="بادی مجلسی" style="width: 100%; height: 100%; object-fit: cover; transition: transform .4s;">
             </div>
-            <span style="font-weight: 700; margin-top: 8px;">بادی مجلسی و فانتزی</span>
+            <span>بادی مجلسی و فانتزی</span>
         </a>
         <a href="{{ route('home', ['c' => 'لباس زیر مردانه']) }}" class="tile">
             <div class="art" style="aspect-ratio: 1/1; overflow: hidden; border-radius: 18px;">
                 <img src="/storage/products/boxer_men.jpg" alt="لباس زیر مردانه" style="width: 100%; height: 100%; object-fit: cover; transition: transform .4s;">
             </div>
-            <span style="font-weight: 700; margin-top: 8px;">لباس زیر مردانه</span>
+            <span>لباس زیر مردانه</span>
         </a>
     </div>
 
     <!-- Discreet Packaging Reassurance Banner -->
-    <div style="background: linear-gradient(135deg, #ffffff 0%, var(--brand-light) 100%); border: 1px solid var(--brand-border); border-radius: 22px; padding: 22px 26px; margin: 28px 0 34px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; box-shadow: 0 6px 22px rgba(168, 43, 89, 0.06);">
-        <div style="display: flex; align-items: center; gap: 16px;">
-            <div style="width: 52px; height: 52px; border-radius: 16px; background: var(--brand-light); border: 1px solid var(--brand-border); display: grid; place-items: center; color: var(--brand); flex-shrink: 0; box-shadow: 0 4px 12px rgba(168, 43, 89, 0.12);">
+    <div class="reassurance-banner">
+        <div class="reassurance-content">
+            <div class="reassurance-icon">
                 <svg class="ic" style="width: 28px; height: 28px;"><use href="#i-box-lock"/></svg>
             </div>
             <div>
-                <b style="font-size: 16px; display: block; margin-bottom: 4px; color: var(--ink);">خیال شما آسوده؛ تضمین ۱۰۰٪ بسته‌بندی محرمانه</b>
-                <p class="muted" style="margin: 0; font-size: 13px; line-height: 1.7;">
+                <b class="reassurance-title">خیال شما آسوده؛ تضمین ۱۰۰٪ بسته‌بندی محرمانه</b>
+                <p class="reassurance-desc">
                     بسته‌های سفارش شما در کارتن‌های پستی کاملاً پوشیده، مات و بدون هرگونه نام محصول، لوگوی لباس زیر یا تصویر ارسال می‌گردد تا حریم خصوصی شما حفظ شود.
                 </p>
             </div>

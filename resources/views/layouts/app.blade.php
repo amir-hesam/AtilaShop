@@ -93,12 +93,18 @@
         @media (prefers-color-scheme: dark) {
             :root:not([data-theme="light"]) {
                 --bg: #140f13;
+                --bg-subtle: #191117;
                 --card: #1c151b;
                 --ink: #f8eef2;
                 --muted: #a8959f;
                 --line: #30242c;
+                --line-subtle: #241922;
                 --brand: #e07593;
                 --brand-hover: #efa0b5;
+                --brand-light: #25161f;
+                --brand-border: #422030;
+                --brand-glow: rgba(224, 117, 147, 0.25);
+                --brand-gradient: linear-gradient(135deg, #d44d79 0%, #a62a55 100%);
                 --sale: #ff6b87;
                 --success: #34d399;
                 --warning: #fbbf24;
@@ -111,12 +117,18 @@
 
         :root[data-theme="dark"] {
             --bg: #140f13;
+            --bg-subtle: #191117;
             --card: #1c151b;
             --ink: #f8eef2;
             --muted: #a8959f;
             --line: #30242c;
+            --line-subtle: #241922;
             --brand: #e07593;
             --brand-hover: #efa0b5;
+            --brand-light: #25161f;
+            --brand-border: #422030;
+            --brand-glow: rgba(224, 117, 147, 0.25);
+            --brand-gradient: linear-gradient(135deg, #d44d79 0%, #a62a55 100%);
             --sale: #ff6b87;
             --success: #34d399;
             --warning: #fbbf24;
@@ -148,6 +160,15 @@
             flex-direction: column;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+        }
+
+        :root[data-theme="dark"] body {
+            background-image: radial-gradient(120% 75% at 50% -8%, rgba(224, 117, 147, 0.08) 0%, var(--bg) 60%);
+        }
+        @media (prefers-color-scheme: dark) {
+            :root:not([data-theme="light"]) body {
+                background-image: radial-gradient(120% 75% at 50% -8%, rgba(224, 117, 147, 0.08) 0%, var(--bg) 60%);
+            }
         }
 
         body::before {
@@ -896,12 +917,13 @@
             position: absolute;
             bottom: 12px;
             right: 12px;
-            background: rgba(255, 255, 255, 0.95);
+            background: color-mix(in srgb, var(--card) 92%, transparent);
+            color: var(--ink);
             padding: 6px 14px;
             border-radius: 99px;
             font-size: 13.5px;
             font-weight: 700;
-            box-shadow: 0 4px 12px rgba(168, 43, 89, 0.1);
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
             border: 1px solid var(--line);
             backdrop-filter: blur(8px);
             transition: all .2s ease;
@@ -909,6 +931,7 @@
         .tile:hover span {
             color: var(--brand);
             border-color: var(--brand-border);
+            background: var(--card);
         }
         .tile:hover .g {
             transform: scale(1.08);
@@ -920,6 +943,51 @@
             .tiles {
                 grid-template-columns: 1fr 1fr;
             }
+        }
+
+        /* Reassurance Banner (Discreet Packaging & Privacy) */
+        .reassurance-banner {
+            background: linear-gradient(135deg, var(--card) 0%, var(--brand-light) 100%);
+            border: 1px solid var(--brand-border);
+            border-radius: 22px;
+            padding: 22px 26px;
+            margin: 28px 0 34px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+            box-shadow: 0 6px 22px rgba(0, 0, 0, 0.05);
+        }
+        .reassurance-content {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .reassurance-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 16px;
+            background: var(--brand-light);
+            border: 1px solid var(--brand-border);
+            display: grid;
+            place-items: center;
+            color: var(--brand);
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px var(--brand-glow);
+        }
+        .reassurance-title {
+            font-size: 16px;
+            display: block;
+            margin-bottom: 4px;
+            color: var(--ink);
+            font-weight: 800;
+        }
+        .reassurance-desc {
+            margin: 0;
+            font-size: 13px;
+            line-height: 1.7;
+            color: var(--muted);
         }
 
         /* Apparel Art Vector */
@@ -1049,10 +1117,10 @@
             border-radius: 99px;
         }
         .b1 {
-            background: rgba(255, 255, 255, 0.95);
+            background: color-mix(in srgb, var(--card) 92%, transparent);
             color: var(--brand);
             border: 1px solid var(--brand-border);
-            box-shadow: 0 2px 8px rgba(168, 43, 89, 0.15);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
             backdrop-filter: blur(6px);
         }
         .b2 {
@@ -1067,26 +1135,27 @@
             width: 36px;
             height: 36px;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.92);
+            background: color-mix(in srgb, var(--card) 92%, transparent);
             backdrop-filter: blur(6px);
             display: grid;
             place-items: center;
             color: var(--ink);
             z-index: 3;
-            box-shadow: 0 3px 10px rgba(168, 43, 89, 0.12);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
             border: 1px solid var(--line-subtle);
             transition: all .2s ease;
         }
         .hb:hover {
             transform: scale(1.12);
-            background: #fff;
-            box-shadow: 0 4px 14px rgba(168, 43, 89, 0.22);
+            background: var(--card);
+            box-shadow: 0 4px 14px var(--brand-glow);
             color: var(--brand);
+            border-color: var(--brand-border);
         }
         .hb.on {
-            background: #fff;
+            background: var(--card);
             border-color: var(--brand-border);
-            box-shadow: 0 4px 12px rgba(168, 43, 89, 0.25);
+            box-shadow: 0 4px 12px var(--brand-glow);
         }
         .hb.on .ic {
             fill: var(--brand);
@@ -1230,8 +1299,8 @@
             border: 1px solid var(--line);
             border-radius: 24px;
             padding: 24px 28px;
-            background: linear-gradient(180deg, #ffffff 0%, var(--brand-light) 100%);
-            box-shadow: 0 4px 20px rgba(168, 43, 89, 0.05);
+            background: linear-gradient(180deg, var(--card) 0%, var(--brand-light) 100%);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
         }
         .nl div {
             display: flex;
