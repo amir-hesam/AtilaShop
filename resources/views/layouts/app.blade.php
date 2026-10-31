@@ -947,8 +947,14 @@
 
         /* Reassurance Banner (Discreet Packaging & Privacy) */
         .reassurance-banner {
-            background: linear-gradient(135deg, var(--card) 0%, var(--brand-light) 100%);
-            border: 1px solid var(--brand-border);
+            position: relative;
+            overflow: hidden;
+            background-color: var(--card);
+            background-image: 
+                radial-gradient(ellipse 65% 130% at 100% 50%, color-mix(in srgb, var(--brand) 16%, transparent) 0%, color-mix(in srgb, var(--brand) 4%, transparent) 45%, transparent 70%),
+                linear-gradient(to left, color-mix(in srgb, var(--brand) 7%, transparent) 0%, transparent 50%);
+            border: 1px solid var(--line);
+            border-right: 2px solid color-mix(in srgb, var(--brand) 45%, var(--line));
             border-radius: 22px;
             padding: 22px 26px;
             margin: 28px 0 34px;
@@ -957,24 +963,40 @@
             justify-content: space-between;
             gap: 20px;
             flex-wrap: wrap;
-            box-shadow: 0 6px 22px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+        .reassurance-banner::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: -30px;
+            transform: translateY(-50%);
+            width: 220px;
+            height: 220px;
+            background: radial-gradient(circle, color-mix(in srgb, var(--brand) 22%, transparent) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            filter: blur(16px);
+            z-index: 1;
         }
         .reassurance-content {
             display: flex;
             align-items: center;
             gap: 16px;
+            position: relative;
+            z-index: 2;
         }
         .reassurance-icon {
             width: 52px;
             height: 52px;
             border-radius: 16px;
-            background: var(--brand-light);
-            border: 1px solid var(--brand-border);
+            background: color-mix(in srgb, var(--brand) 12%, var(--card));
+            border: 1px solid color-mix(in srgb, var(--brand) 30%, var(--line));
             display: grid;
             place-items: center;
             color: var(--brand);
             flex-shrink: 0;
-            box-shadow: 0 4px 12px var(--brand-glow);
+            box-shadow: 0 4px 14px color-mix(in srgb, var(--brand) 20%, transparent);
         }
         .reassurance-title {
             font-size: 16px;
@@ -988,6 +1010,10 @@
             font-size: 13px;
             line-height: 1.7;
             color: var(--muted);
+        }
+        .reassurance-banner .btn.o {
+            position: relative;
+            z-index: 2;
         }
 
         /* Apparel Art Vector */
