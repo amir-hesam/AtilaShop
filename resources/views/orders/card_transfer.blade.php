@@ -7,25 +7,25 @@
 <div style="max-width: 620px; margin: 30px auto;">
     <div class="box">
         <div style="text-align: center; margin-bottom: 24px;">
-            <div style="width: 56px; height: 56px; border-radius: 50%; background: color-mix(in srgb, var(--brand) 15%, transparent); color: var(--brand); display: grid; place-items: center; margin: 0 auto 12px;">
+            <div style="width: 58px; height: 58px; border-radius: 18px; background: var(--brand-light); border: 1px solid var(--brand-border); color: var(--brand); display: grid; place-items: center; margin: 0 auto 12px; box-shadow: 0 4px 14px rgba(224, 69, 123, 0.15);">
                 <svg class="ic" style="width: 28px; height: 28px;"><use href="#i-shield"/></svg>
             </div>
             <h2 style="font-size: 22px; font-weight: 800; margin: 0 0 6px;">اطلاعات پرداخت کارت‌به‌کارت</h2>
             <p class="muted" style="margin: 0; font-size: 14px;">سفارش شماره: <b>{{ $order->order_number }}</b></p>
         </div>
 
-        <div style="background: var(--bg); border: 1px solid var(--line); border-radius: 18px; padding: 20px; margin-bottom: 24px;">
+        <div style="background: linear-gradient(180deg, var(--card) 0%, var(--brand-light) 100%); border: 1px solid var(--brand-border); border-radius: 20px; padding: 22px; margin-bottom: 24px; box-shadow: 0 4px 18px rgba(224, 69, 123, 0.05);">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
                 <span class="muted" style="font-size: 14px;">مبلغ دقیق جهت واریز:</span>
-                <span style="font-size: 20px; font-weight: 800; color: var(--brand);">{{ $order->formatted_total }}</span>
+                <span style="font-size: 22px; font-weight: 800; color: var(--brand);">{{ $order->formatted_total }}</span>
             </div>
 
-            <div style="border-top: 1px dashed var(--line); padding-top: 14px; margin-top: 10px;">
+            <div style="border-top: 1px dashed var(--brand-border); padding-top: 14px; margin-top: 10px;">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
                     <span class="muted" style="font-size: 14px;">شماره کارت فروشگاه:</span>
-                    <button type="button" class="btn o" style="padding: 4px 10px; font-size: 11px;" onclick="copyCard()">کپی شماره کارت</button>
+                    <button type="button" class="btn o" style="padding: 4px 12px; font-size: 11px;" onclick="copyCard()">کپی شماره کارت</button>
                 </div>
-                <div id="card-num" style="font-size: 20px; font-weight: 800; letter-spacing: 2px; text-align: center; background: var(--card); padding: 10px; border-radius: 12px; border: 1px solid var(--line);" dir="ltr">
+                <div id="card-num" style="font-size: 21px; font-weight: 800; letter-spacing: 2px; text-align: center; background: var(--card); padding: 12px; border-radius: 14px; border: 1.5px solid var(--brand-border); color: var(--brand); box-shadow: 0 2px 8px rgba(224, 69, 123, 0.06);" dir="ltr">
                     {{ $cardDetails['card_number'] }}
                 </div>
 

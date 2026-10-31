@@ -84,7 +84,7 @@
         </div>
 
         <!-- Current Stage Dynamic Guidance -->
-        <div style="background: var(--bg); border: 1px solid var(--line); border-radius: 14px; padding: 14px 18px; margin-top: 14px; font-size: 13.5px; line-height: 1.7; display: flex; align-items: center; gap: 12px;">
+        <div style="background: var(--brand-light); border: 1px solid var(--brand-border); border-radius: 16px; padding: 16px 20px; margin-top: 14px; font-size: 13.5px; line-height: 1.7; display: flex; align-items: center; gap: 14px; box-shadow: 0 4px 14px rgba(224, 69, 123, 0.06);">
             @if($order->status === 'در انتظار پرداخت')
                 <svg class="ic" style="color: var(--warning); width: 22px; height: 22px; flex-shrink: 0;"><use href="#i-orders"/></svg>
                 <div>

@@ -130,19 +130,19 @@
     </div>
 
     <!-- Discreet Packaging Reassurance Banner -->
-    <div style="background: color-mix(in srgb, var(--card) 95%, var(--brand)); border: 1px solid var(--line); border-radius: 20px; padding: 20px 24px; margin: 28px 0 32px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
+    <div style="background: linear-gradient(135deg, #ffffff 0%, var(--brand-light) 100%); border: 1px solid var(--brand-border); border-radius: 22px; padding: 22px 26px; margin: 28px 0 34px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; box-shadow: 0 6px 22px rgba(224, 69, 123, 0.06);">
         <div style="display: flex; align-items: center; gap: 16px;">
-            <div style="width: 52px; height: 52px; border-radius: 50%; background: color-mix(in srgb, var(--brand) 15%, transparent); display: grid; place-items: center; color: var(--brand); flex-shrink: 0;">
+            <div style="width: 52px; height: 52px; border-radius: 16px; background: var(--brand-light); border: 1px solid var(--brand-border); display: grid; place-items: center; color: var(--brand); flex-shrink: 0; box-shadow: 0 4px 12px rgba(224, 69, 123, 0.12);">
                 <svg class="ic" style="width: 28px; height: 28px;"><use href="#i-box-lock"/></svg>
             </div>
             <div>
-                <b style="font-size: 16px; display: block; margin-bottom: 4px;">خیال شما آسوده؛ تضمین ۱۰۰٪ بسته‌بندی محرمانه (Discreet Packaging)</b>
+                <b style="font-size: 16px; display: block; margin-bottom: 4px; color: var(--ink);">خیال شما آسوده؛ تضمین ۱۰۰٪ بسته‌بندی محرمانه (Discreet Packaging)</b>
                 <p class="muted" style="margin: 0; font-size: 13px; line-height: 1.7;">
                     بسته‌های سفارش شما در کارتن‌های پستی کاملاً پوشیده، مات و بدون هرگونه نام محصول، لوگوی لباس زیر یا تصویر ارسال می‌گردد تا حریم خصوصی شما حفظ شود.
                 </p>
             </div>
         </div>
-        <button type="button" onclick="openSizeGuide()" class="btn o" style="font-size: 13px; padding: 9px 20px;">
+        <button type="button" onclick="openSizeGuide()" class="btn o" style="font-size: 13px; padding: 10px 22px;">
             📐 جدول انتخاب سایز
         </button>
     </div>

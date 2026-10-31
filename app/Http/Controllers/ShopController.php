@@ -85,11 +85,13 @@ class ShopController extends Controller
 
     public function show($id)
     {
-        $product = Product::findOrFail($id);
+        $product = is_numeric($id) 
+            ? Product::findOrFail($id) 
+            : Product::where('slug', $id)->firstOrFail();
+
         $related = Product::where('gender', $product->gender)
             ->where('id', '!=', $product->id)
-            ->where('category', '!=', $product->category)
-            ->take(3)
+            ->take(4)
             ->get();
 
         $userWishlist = Auth::check() 

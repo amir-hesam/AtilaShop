@@ -6,8 +6,10 @@ use App\Models\User;
 use App\Models\Product;
 use App\Models\Order;
 use App\Models\OrderItem;
+use App\Models\Wishlist;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Schema;
 
 class DatabaseSeeder extends Seeder
 {
@@ -36,10 +38,13 @@ class DatabaseSeeder extends Seeder
             ]
         );
 
-        // حذف محصولات قبلی و جایگزینی با محصولات تخصصی لباس زیر
-        Product::truncate();
-        Order::truncate();
-        OrderItem::truncate();
+        // غیرفعال‌سازی موقت قیدهای کلید خارجی و پاکسازی جداول وابسته (سازگار با MySQL/MariaDB)
+        Schema::disableForeignKeyConstraints();
+        Wishlist::query()->delete();
+        OrderItem::query()->delete();
+        Order::query()->delete();
+        Product::query()->delete();
+        Schema::enableForeignKeyConstraints();
 
         $braSizes = ['75B', '80B', '85B', '90B'];
         $pantySizes = ['M', 'L', 'XL', '2XL'];
