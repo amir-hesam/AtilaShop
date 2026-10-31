@@ -136,7 +136,7 @@
                 <svg class="ic" style="width: 28px; height: 28px;"><use href="#i-box-lock"/></svg>
             </div>
             <div>
-                <b style="font-size: 16px; display: block; margin-bottom: 4px; color: var(--ink);">خیال شما آسوده؛ تضمین ۱۰۰٪ بسته‌بندی محرمانه (Discreet Packaging)</b>
+                <b style="font-size: 16px; display: block; margin-bottom: 4px; color: var(--ink);">خیال شما آسوده؛ تضمین ۱۰۰٪ بسته‌بندی محرمانه</b>
                 <p class="muted" style="margin: 0; font-size: 13px; line-height: 1.7;">
                     بسته‌های سفارش شما در کارتن‌های پستی کاملاً پوشیده، مات و بدون هرگونه نام محصول، لوگوی لباس زیر یا تصویر ارسال می‌گردد تا حریم خصوصی شما حفظ شود.
                 </p>
