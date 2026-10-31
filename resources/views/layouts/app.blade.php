@@ -6,28 +6,79 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title', 'AtilaShop | فروشگاه آنلاین پوشاک')</title>
     
-    <!-- Google Fonts - Vazirmatn -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Digikala Official Font Preload -->
+    <link rel="preload" href="/fonts/digikala-variable.woff2" as="font" type="font/woff2" crossorigin>
     
     <style>
+        /* Digikala & IRANSansX Variable Webfont */
+        @font-face {
+            font-family: 'Digikala';
+            font-style: normal;
+            font-weight: 100 1000;
+            font-display: swap;
+            src: url('/fonts/digikala-variable.woff2') format('woff2-variations'),
+                 url('/fonts/digikala-variable.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'Digikala';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url('/fonts/digikala-variable.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'Digikala';
+            font-style: normal;
+            font-weight: 500;
+            font-display: swap;
+            src: url('/fonts/digikala-variable.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'Digikala';
+            font-style: normal;
+            font-weight: 600;
+            font-display: swap;
+            src: url('/fonts/digikala-variable.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'Digikala';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url('/fonts/digikala-variable.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'Digikala';
+            font-style: normal;
+            font-weight: 800;
+            font-display: swap;
+            src: url('/fonts/digikala-variable.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'IRANSansX';
+            font-style: normal;
+            font-weight: 100 1000;
+            font-display: swap;
+            src: url('/fonts/digikala-variable.woff2') format('woff2-variations'),
+                 url('/fonts/digikala-variable.woff2') format('woff2');
+        }
+
         :root {
-            /* Luxury Lingerie Light Pink Theme */
-            --bg: #fff5f8;
-            --bg-subtle: #fef0f5;
+            /* Velvety Vintage Rose Light Theme (Harmonized with Announcement Bar) */
+            --bg: #fff6f9;
+            --bg-subtle: #fdf1f6;
             --card: #ffffff;
             --ink: #22121b;
             --muted: #7d6572;
-            --line: #f7dbe6;
+            --line: #f5d7e4;
             --line-subtle: #fbeaf1;
-            --brand: #e0457b;
-            --brand-hover: #c93064;
-            --brand-light: #fdf2f7;
-            --brand-border: #f9c2d6;
-            --brand-glow: rgba(224, 69, 123, 0.28);
-            --brand-gradient: linear-gradient(135deg, #e95285 0%, #c92f63 100%);
-            --sale: #e62e5c;
+            --brand: #a82b59;
+            --brand-hover: #8f214a;
+            --brand-light: #fdf3f7;
+            --brand-border: #f7cadb;
+            --brand-glow: rgba(168, 43, 89, 0.22);
+            --brand-gradient: linear-gradient(135deg, #b63468 0%, #8c2049 100%);
+            --sale: #c52250;
             --success: #10b981;
             --warning: #f59e0b;
             --bgl: 95%;
@@ -86,7 +137,7 @@
 
         body {
             margin: 0;
-            font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont, Tahoma, sans-serif;
+            font-family: 'Digikala', 'IRANSansX', 'IRANSans', system-ui, -apple-system, BlinkMacSystemFont, Tahoma, sans-serif;
             background: var(--bg);
             background-image: radial-gradient(120% 75% at 50% -8%, #ffe8f2 0%, var(--bg) 60%);
             background-attachment: fixed;
@@ -95,6 +146,8 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         body::before {
@@ -174,7 +227,7 @@
             font-weight: 600;
             letter-spacing: .2px;
             border-bottom: 1px solid #f9d1e0;
-            box-shadow: 0 1px 4px rgba(224, 69, 123, 0.04);
+            box-shadow: 0 1px 4px rgba(168, 43, 89, 0.04);
         }
 
         :root[data-theme="dark"] .ann {
@@ -201,7 +254,7 @@
             border-bottom: 1px solid var(--line);
             backdrop-filter: blur(14px);
             -webkit-backdrop-filter: blur(14px);
-            box-shadow: 0 2px 14px rgba(224, 69, 123, 0.04);
+            box-shadow: 0 2px 14px rgba(168, 43, 89, 0.04);
         }
 
         .hd {
@@ -265,7 +318,7 @@
             display: inline-flex !important;
             align-items: center;
             gap: 6px;
-            box-shadow: 0 2px 8px rgba(224, 69, 123, 0.08);
+            box-shadow: 0 2px 8px rgba(168, 43, 89, 0.08);
             transition: all .2s ease;
             cursor: pointer;
         }
@@ -273,9 +326,7 @@
             background: var(--brand-gradient) !important;
             color: #fff !important;
             border-color: transparent !important;
-            box-shadow: 0 4px 14px rgba(224, 69, 123, 0.3) !important;
-            transform: translateY(-1px);
-        }
+            box-shadow: 0 4px 14px rgba(168, 43, 89, 0.3) !important;
             transform: translateY(-1px);
         }
 
@@ -509,7 +560,7 @@
             text-align: center;
             padding: 0 4px;
             font-weight: 800;
-            box-shadow: 0 2px 8px rgba(224, 69, 123, 0.4);
+            box-shadow: 0 2px 8px rgba(168, 43, 89, 0.4);
             border: 1.5px solid var(--card);
         }
 
@@ -588,19 +639,19 @@
             justify-content: center;
             transition: all .2s ease;
             cursor: pointer;
-            box-shadow: 0 4px 16px rgba(224, 69, 123, 0.3);
+            box-shadow: 0 4px 16px rgba(168, 43, 89, 0.3);
             border: 0;
         }
         .btn:hover {
             opacity: .95;
             transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(224, 69, 123, 0.42);
+            box-shadow: 0 8px 24px rgba(168, 43, 89, 0.42);
         }
         .btn.o {
             background: var(--card);
             color: var(--brand);
             border: 1.5px solid var(--brand-border);
-            box-shadow: 0 2px 8px rgba(224, 69, 123, 0.08);
+            box-shadow: 0 2px 8px rgba(168, 43, 89, 0.08);
         }
         .btn.o:hover {
             background: var(--brand-light);
@@ -611,10 +662,10 @@
         .btn.brand {
             background: var(--brand-gradient);
             color: #ffffff;
-            box-shadow: 0 4px 18px rgba(224, 69, 123, 0.35);
+            box-shadow: 0 4px 18px rgba(168, 43, 89, 0.35);
         }
         .btn.brand:hover {
-            box-shadow: 0 8px 26px rgba(224, 69, 123, 0.48);
+            box-shadow: 0 8px 26px rgba(168, 43, 89, 0.48);
         }
         .btn.dark {
             background: var(--ink);
@@ -630,7 +681,7 @@
             overflow: hidden;
             min-height: 430px;
             border: 1px solid var(--line);
-            box-shadow: 0 8px 30px rgba(224, 69, 123, 0.08);
+            box-shadow: 0 8px 30px rgba(168, 43, 89, 0.08);
         }
         .sl {
             position: absolute;
@@ -684,7 +735,7 @@
             display: grid;
             place-items: center;
             max-height: 360px;
-            box-shadow: 0 12px 32px rgba(224, 69, 123, 0.15);
+            box-shadow: 0 12px 32px rgba(168, 43, 89, 0.15);
         }
         .tag {
             position: absolute;
@@ -697,7 +748,7 @@
             font-size: 13px;
             font-weight: 700;
             color: var(--brand);
-            box-shadow: 0 8px 24px rgba(224, 69, 123, 0.18);
+            box-shadow: 0 8px 24px rgba(168, 43, 89, 0.18);
         }
         .pg {
             position: absolute;
@@ -768,12 +819,12 @@
             padding: 14px 16px;
             border-radius: 18px;
             border: 1px solid var(--line);
-            box-shadow: 0 4px 16px rgba(224, 69, 123, 0.04);
+            box-shadow: 0 4px 16px rgba(168, 43, 89, 0.04);
             transition: all .2s ease;
         }
         .trust div:hover {
             border-color: var(--brand-border);
-            box-shadow: 0 8px 22px rgba(224, 69, 123, 0.1);
+            box-shadow: 0 8px 22px rgba(168, 43, 89, 0.1);
             transform: translateY(-1px);
         }
         .trust b {
@@ -830,12 +881,12 @@
             cursor: pointer;
             border: 1px solid var(--line);
             background: var(--card);
-            box-shadow: 0 4px 16px rgba(224, 69, 123, 0.04);
+            box-shadow: 0 4px 16px rgba(168, 43, 89, 0.04);
             transition: all .25s ease;
         }
         .tile:hover {
             border-color: var(--brand-border);
-            box-shadow: 0 10px 24px rgba(224, 69, 123, 0.12);
+            box-shadow: 0 10px 24px rgba(168, 43, 89, 0.12);
             transform: translateY(-3px);
         }
         .tile .art {
@@ -850,7 +901,7 @@
             border-radius: 99px;
             font-size: 13.5px;
             font-weight: 700;
-            box-shadow: 0 4px 12px rgba(224, 69, 123, 0.1);
+            box-shadow: 0 4px 12px rgba(168, 43, 89, 0.1);
             border: 1px solid var(--line);
             backdrop-filter: blur(8px);
             transition: all .2s ease;
@@ -913,7 +964,7 @@
             font-size: 14px;
             background: var(--card);
             cursor: pointer;
-            box-shadow: 0 2px 6px rgba(224, 69, 123, 0.03);
+            box-shadow: 0 2px 6px rgba(168, 43, 89, 0.03);
             transition: all .2s ease;
         }
         .chip:hover {
@@ -927,7 +978,7 @@
             color: #ffffff;
             border-color: transparent;
             font-weight: 700;
-            box-shadow: 0 4px 14px rgba(224, 69, 123, 0.3);
+            box-shadow: 0 4px 14px rgba(168, 43, 89, 0.3);
         }
         .tool input {
             flex: 1 1 200px;
@@ -963,11 +1014,11 @@
             display: flex;
             flex-direction: column;
             transition: box-shadow .25s ease, transform .25s ease, border-color .25s ease;
-            box-shadow: 0 4px 16px rgba(224, 69, 123, 0.04);
+            box-shadow: 0 4px 16px rgba(168, 43, 89, 0.04);
         }
         .card:hover {
             border-color: var(--brand-border);
-            box-shadow: 0 12px 30px rgba(224, 69, 123, 0.12);
+            box-shadow: 0 12px 30px rgba(168, 43, 89, 0.12);
             transform: translateY(-3px);
         }
         .card:hover .g {
@@ -1001,7 +1052,7 @@
             background: rgba(255, 255, 255, 0.95);
             color: var(--brand);
             border: 1px solid var(--brand-border);
-            box-shadow: 0 2px 8px rgba(224, 69, 123, 0.15);
+            box-shadow: 0 2px 8px rgba(168, 43, 89, 0.15);
             backdrop-filter: blur(6px);
         }
         .b2 {
@@ -1022,20 +1073,20 @@
             place-items: center;
             color: var(--ink);
             z-index: 3;
-            box-shadow: 0 3px 10px rgba(224, 69, 123, 0.12);
+            box-shadow: 0 3px 10px rgba(168, 43, 89, 0.12);
             border: 1px solid var(--line-subtle);
             transition: all .2s ease;
         }
         .hb:hover {
             transform: scale(1.12);
             background: #fff;
-            box-shadow: 0 4px 14px rgba(224, 69, 123, 0.22);
+            box-shadow: 0 4px 14px rgba(168, 43, 89, 0.22);
             color: var(--brand);
         }
         .hb.on {
             background: #fff;
             border-color: var(--brand-border);
-            box-shadow: 0 4px 12px rgba(224, 69, 123, 0.25);
+            box-shadow: 0 4px 12px rgba(168, 43, 89, 0.25);
         }
         .hb.on .ic {
             fill: var(--brand);
@@ -1073,7 +1124,7 @@
             background: var(--brand-gradient);
             color: #fff;
             border-color: transparent;
-            box-shadow: 0 2px 8px rgba(224, 69, 123, 0.3);
+            box-shadow: 0 2px 8px rgba(168, 43, 89, 0.3);
         }
         .inf {
             padding: 12px 14px 16px;
@@ -1138,7 +1189,7 @@
             flex-wrap: wrap;
             position: relative;
             overflow: hidden;
-            border: 1px solid rgba(224, 69, 123, 0.3);
+            border: 1px solid rgba(168, 43, 89, 0.3);
             box-shadow: 0 16px 40px rgba(70, 20, 44, 0.16);
         }
         .promo::before {
@@ -1148,7 +1199,7 @@
             right: -15%;
             width: 380px;
             height: 380px;
-            background: radial-gradient(circle, rgba(224, 69, 123, 0.35) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(168, 43, 89, 0.35) 0%, transparent 70%);
             border-radius: 50%;
             pointer-events: none;
         }
@@ -1165,7 +1216,7 @@
         .promo .btn {
             background: var(--brand-gradient);
             color: #ffffff;
-            box-shadow: 0 6px 20px rgba(224, 69, 123, 0.45);
+            box-shadow: 0 6px 20px rgba(168, 43, 89, 0.45);
             border: 0;
         }
 
@@ -1180,7 +1231,7 @@
             border-radius: 24px;
             padding: 24px 28px;
             background: linear-gradient(180deg, #ffffff 0%, var(--brand-light) 100%);
-            box-shadow: 0 4px 20px rgba(224, 69, 123, 0.05);
+            box-shadow: 0 4px 20px rgba(168, 43, 89, 0.05);
         }
         .nl div {
             display: flex;
@@ -1334,7 +1385,7 @@
             background: var(--brand-gradient);
             color: #ffffff;
             border-color: transparent;
-            box-shadow: 0 4px 14px rgba(224, 69, 123, 0.35);
+            box-shadow: 0 4px 14px rgba(168, 43, 89, 0.35);
         }
         .ft {
             list-style: none;
@@ -1498,7 +1549,7 @@
             border: 1px solid var(--line);
             border-radius: 24px;
             padding: 24px;
-            box-shadow: 0 6px 24px rgba(224, 69, 123, 0.05);
+            box-shadow: 0 6px 24px rgba(168, 43, 89, 0.05);
         }
     </style>
     @yield('styles')

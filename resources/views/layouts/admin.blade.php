@@ -6,11 +6,27 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title', 'پنل مدیریت | AtilaShop')</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Digikala Official Font Preload -->
+    <link rel="preload" href="/fonts/digikala-variable.woff2" as="font" type="font/woff2" crossorigin>
 
     <style>
+        /* Digikala & IRANSansX Variable Webfont */
+        @font-face {
+            font-family: 'Digikala';
+            font-style: normal;
+            font-weight: 100 1000;
+            font-display: swap;
+            src: url('/fonts/digikala-variable.woff2') format('woff2-variations'),
+                 url('/fonts/digikala-variable.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'IRANSansX';
+            font-style: normal;
+            font-weight: 100 1000;
+            font-display: swap;
+            src: url('/fonts/digikala-variable.woff2') format('woff2-variations'),
+                 url('/fonts/digikala-variable.woff2') format('woff2');
+        }
         :root {
             --bg: #f8fafc;
             --card: #ffffff;
@@ -52,12 +68,14 @@
         * { box-sizing: border-box; }
         body {
             margin: 0;
-            font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont, Tahoma, sans-serif;
+            font-family: 'Digikala', 'IRANSansX', 'IRANSans', system-ui, -apple-system, BlinkMacSystemFont, Tahoma, sans-serif;
             background: var(--bg);
             color: var(--ink);
             line-height: 1.6;
             min-height: 100vh;
             display: flex;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         a { color: inherit; text-decoration: none; }

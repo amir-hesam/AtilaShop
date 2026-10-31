@@ -129,7 +129,7 @@
                 تأیید و رفتن به مرحله پرداخت
             </button>
 
-            <div style="background: var(--brand-light); border: 1px solid var(--brand-border); border-radius: 16px; padding: 12px 14px; margin-top: 16px; font-size: 12.5px; line-height: 1.6; display: flex; align-items: center; gap: 10px; box-shadow: 0 2px 8px rgba(224, 69, 123, 0.08);">
+            <div style="background: var(--brand-light); border: 1px solid var(--brand-border); border-radius: 16px; padding: 12px 14px; margin-top: 16px; font-size: 12.5px; line-height: 1.6; display: flex; align-items: center; gap: 10px; box-shadow: 0 2px 8px rgba(168, 43, 89, 0.08);">
                 <svg class="ic" style="color: var(--brand); width: 22px; height: 22px; flex-shrink: 0;"><use href="#i-box-lock"/></svg>
                 <span><b style="color: var(--brand);">ارسال کاملاً محرمانه:</b> مرسوله در کارتن پستی مات و بدون درج نام کالا یا لوگو ارسال می‌شود.</span>
             </div>

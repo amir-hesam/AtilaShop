@@ -338,11 +338,27 @@ $detectedUrl = $protocol . $host;
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>نصب‌کننده خودکار فروشگاه آتیلاشاپ | AtilaShop cPanel Installer</title>
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Digikala Official Font Preload -->
+    <link rel="preload" href="/fonts/digikala-variable.woff2" as="font" type="font/woff2" crossorigin>
     
     <style>
+        /* Digikala & IRANSansX Variable Webfont */
+        @font-face {
+            font-family: 'Digikala';
+            font-style: normal;
+            font-weight: 100 1000;
+            font-display: swap;
+            src: url('/fonts/digikala-variable.woff2') format('woff2-variations'),
+                 url('/fonts/digikala-variable.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'IRANSansX';
+            font-style: normal;
+            font-weight: 100 1000;
+            font-display: swap;
+            src: url('/fonts/digikala-variable.woff2') format('woff2-variations'),
+                 url('/fonts/digikala-variable.woff2') format('woff2');
+        }
         :root {
             --bg: #f8fafc;
             --card: #ffffff;
@@ -359,7 +375,7 @@ $detectedUrl = $protocol . $host;
         * { box-sizing: border-box; }
         body {
             margin: 0;
-            font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont, Tahoma, sans-serif;
+            font-family: 'Digikala', 'IRANSansX', 'IRANSans', system-ui, -apple-system, BlinkMacSystemFont, Tahoma, sans-serif;
             background: var(--bg);
             color: var(--ink);
             line-height: 1.6;
@@ -369,6 +385,8 @@ $detectedUrl = $protocol . $host;
             justify-content: center;
             align-items: center;
             padding: 30px 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         .installer-card {

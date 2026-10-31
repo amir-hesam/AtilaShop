@@ -130,9 +130,9 @@
     </div>
 
     <!-- Discreet Packaging Reassurance Banner -->
-    <div style="background: linear-gradient(135deg, #ffffff 0%, var(--brand-light) 100%); border: 1px solid var(--brand-border); border-radius: 22px; padding: 22px 26px; margin: 28px 0 34px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; box-shadow: 0 6px 22px rgba(224, 69, 123, 0.06);">
+    <div style="background: linear-gradient(135deg, #ffffff 0%, var(--brand-light) 100%); border: 1px solid var(--brand-border); border-radius: 22px; padding: 22px 26px; margin: 28px 0 34px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; box-shadow: 0 6px 22px rgba(168, 43, 89, 0.06);">
         <div style="display: flex; align-items: center; gap: 16px;">
-            <div style="width: 52px; height: 52px; border-radius: 16px; background: var(--brand-light); border: 1px solid var(--brand-border); display: grid; place-items: center; color: var(--brand); flex-shrink: 0; box-shadow: 0 4px 12px rgba(224, 69, 123, 0.12);">
+            <div style="width: 52px; height: 52px; border-radius: 16px; background: var(--brand-light); border: 1px solid var(--brand-border); display: grid; place-items: center; color: var(--brand); flex-shrink: 0; box-shadow: 0 4px 12px rgba(168, 43, 89, 0.12);">
                 <svg class="ic" style="width: 28px; height: 28px;"><use href="#i-box-lock"/></svg>
             </div>
             <div>
