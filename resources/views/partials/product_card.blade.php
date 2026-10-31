@@ -7,7 +7,7 @@
 <article class="card" id="card-{{ $product->id }}">
     <div class="im" onclick="openProductModal({{ $product->id }})" id="im-{{ $product->id }}" style="--h: {{ $initialHue }};">
         @if($product->image_url)
-            <div class="art" style="aspect-ratio: 3/4; overflow: hidden; background: linear-gradient(180deg, #fff4f8 0%, #fde8f0 100%);">
+            <div class="art" style="aspect-ratio: 3/4; overflow: hidden; background: var(--card-media-bg);">
                 <img src="{{ $product->image_url }}" alt="{{ $product->name }}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease;" class="card-photo">
             </div>
         @else

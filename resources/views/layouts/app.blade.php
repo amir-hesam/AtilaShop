@@ -6,6 +6,13 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title', 'AtilaShop | فروشگاه آنلاین پوشاک')</title>
     
+    <script>
+        (function() {
+            var t = localStorage.getItem('theme');
+            if (t) document.documentElement.dataset.theme = t;
+        })();
+    </script>
+    
     <!-- Digikala Official Font Preload -->
     <link rel="preload" href="/fonts/digikala-variable.woff2" as="font" type="font/woff2" crossorigin>
     
@@ -85,6 +92,10 @@
             --gl: 44%;
             --hbg: 94%;
             --arch: 90%;
+            --card-media-bg: linear-gradient(180deg, #fff4f8 0%, #fde8f0 100%);
+            --card-shadow: 0 4px 16px rgba(168, 43, 89, 0.04);
+            --card-shadow-hover: 0 12px 30px rgba(168, 43, 89, 0.12);
+            --pill-shadow: 0 2px 8px rgba(168, 43, 89, 0.08);
             box-sizing: border-box;
             padding-top: env(safe-area-inset-top, 0px);
             padding-bottom: env(safe-area-inset-bottom, 0px);
@@ -92,50 +103,60 @@
 
         @media (prefers-color-scheme: dark) {
             :root:not([data-theme="light"]) {
-                --bg: #140f13;
-                --bg-subtle: #191117;
-                --card: #1c151b;
-                --ink: #f8eef2;
-                --muted: #a8959f;
-                --line: #30242c;
-                --line-subtle: #241922;
-                --brand: #e07593;
-                --brand-hover: #efa0b5;
-                --brand-light: #25161f;
-                --brand-border: #422030;
-                --brand-glow: rgba(224, 117, 147, 0.25);
-                --brand-gradient: linear-gradient(135deg, #d44d79 0%, #a62a55 100%);
-                --sale: #ff6b87;
-                --success: #34d399;
-                --warning: #fbbf24;
-                --bgl: 20%;
-                --gl: 66%;
-                --hbg: 16%;
-                --arch: 24%;
+                /* Luxury Velvet Obsidian Dark Theme */
+                --bg: #0b0a0f;
+                --bg-subtle: #121118;
+                --card: #16151e;
+                --ink: #ffffff;
+                --muted: #9ea3b2;
+                --line: #252330;
+                --line-subtle: #1c1b26;
+                --brand: #f43f7a;
+                --brand-hover: #fb7185;
+                --brand-light: rgba(244, 63, 122, 0.12);
+                --brand-border: rgba(244, 63, 122, 0.32);
+                --brand-glow: rgba(244, 63, 122, 0.32);
+                --brand-gradient: linear-gradient(135deg, #f43f7a 0%, #be185d 100%);
+                --sale: #ff4d6d;
+                --success: #10b981;
+                --warning: #f59e0b;
+                --bgl: 18%;
+                --gl: 72%;
+                --hbg: 13%;
+                --arch: 18%;
+                --card-media-bg: linear-gradient(180deg, #1d1b26 0%, #15141d 100%);
+                --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+                --card-shadow-hover: 0 12px 32px rgba(0, 0, 0, 0.6), 0 0 18px rgba(244, 63, 122, 0.2);
+                --pill-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
             }
         }
 
         :root[data-theme="dark"] {
-            --bg: #140f13;
-            --bg-subtle: #191117;
-            --card: #1c151b;
-            --ink: #f8eef2;
-            --muted: #a8959f;
-            --line: #30242c;
-            --line-subtle: #241922;
-            --brand: #e07593;
-            --brand-hover: #efa0b5;
-            --brand-light: #25161f;
-            --brand-border: #422030;
-            --brand-glow: rgba(224, 117, 147, 0.25);
-            --brand-gradient: linear-gradient(135deg, #d44d79 0%, #a62a55 100%);
-            --sale: #ff6b87;
-            --success: #34d399;
-            --warning: #fbbf24;
-            --bgl: 20%;
-            --gl: 66%;
-            --hbg: 16%;
-            --arch: 24%;
+            /* Luxury Velvet Obsidian Dark Theme */
+            --bg: #0b0a0f;
+            --bg-subtle: #121118;
+            --card: #16151e;
+            --ink: #ffffff;
+            --muted: #9ea3b2;
+            --line: #252330;
+            --line-subtle: #1c1b26;
+            --brand: #f43f7a;
+            --brand-hover: #fb7185;
+            --brand-light: rgba(244, 63, 122, 0.12);
+            --brand-border: rgba(244, 63, 122, 0.32);
+            --brand-glow: rgba(244, 63, 122, 0.32);
+            --brand-gradient: linear-gradient(135deg, #f43f7a 0%, #be185d 100%);
+            --sale: #ff4d6d;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --bgl: 18%;
+            --gl: 72%;
+            --hbg: 13%;
+            --arch: 18%;
+            --card-media-bg: linear-gradient(180deg, #1d1b26 0%, #15141d 100%);
+            --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            --card-shadow-hover: 0 12px 32px rgba(0, 0, 0, 0.6), 0 0 18px rgba(244, 63, 122, 0.2);
+            --pill-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
         }
 
         html {
@@ -163,11 +184,11 @@
         }
 
         :root[data-theme="dark"] body {
-            background-image: radial-gradient(120% 75% at 50% -8%, rgba(224, 117, 147, 0.08) 0%, var(--bg) 60%);
+            background-image: radial-gradient(120% 75% at 50% -8%, rgba(244, 63, 122, 0.08) 0%, var(--bg) 60%);
         }
         @media (prefers-color-scheme: dark) {
             :root:not([data-theme="light"]) body {
-                background-image: radial-gradient(120% 75% at 50% -8%, rgba(224, 117, 147, 0.08) 0%, var(--bg) 60%);
+                background-image: radial-gradient(120% 75% at 50% -8%, rgba(244, 63, 122, 0.08) 0%, var(--bg) 60%);
             }
         }
 
@@ -208,6 +229,10 @@
             outline: none;
             border-color: var(--brand);
             box-shadow: 0 0 0 3.5px var(--brand-glow);
+        }
+        select option {
+            background: var(--card);
+            color: var(--ink);
         }
 
         input[type="radio"], input[type="checkbox"] {
@@ -823,6 +848,26 @@
             }
         }
 
+        :root[data-theme="dark"] .hero,
+        @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .hero } {
+            box-shadow: 0 14px 40px rgba(0, 0, 0, 0.55);
+        }
+        :root[data-theme="dark"] .sl,
+        @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .sl } {
+            background: radial-gradient(circle at 82% 45%, color-mix(in srgb, hsl(var(--h) 70% 38%) 22%, transparent) 0%, transparent 60%),
+                        linear-gradient(135deg, #131119 0%, #181522 50%, #121017 100%);
+        }
+        :root[data-theme="dark"] .arch,
+        @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .arch } {
+            background: #1b1924;
+            border: 1px solid rgba(244, 63, 122, 0.22);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+        }
+        :root[data-theme="dark"] .pg i,
+        @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .pg i } {
+            background: rgba(255, 255, 255, 0.22);
+        }
+
         /* Trust */
         .trust {
             display: grid;
@@ -840,12 +885,12 @@
             padding: 14px 16px;
             border-radius: 18px;
             border: 1px solid var(--line);
-            box-shadow: 0 4px 16px rgba(168, 43, 89, 0.04);
+            box-shadow: var(--card-shadow);
             transition: all .2s ease;
         }
         .trust div:hover {
             border-color: var(--brand-border);
-            box-shadow: 0 8px 22px rgba(168, 43, 89, 0.1);
+            box-shadow: var(--card-shadow-hover);
             transform: translateY(-1px);
         }
         .trust b {
@@ -902,12 +947,12 @@
             cursor: pointer;
             border: 1px solid var(--line);
             background: var(--card);
-            box-shadow: 0 4px 16px rgba(168, 43, 89, 0.04);
+            box-shadow: var(--card-shadow);
             transition: all .25s ease;
         }
         .tile:hover {
             border-color: var(--brand-border);
-            box-shadow: 0 10px 24px rgba(168, 43, 89, 0.12);
+            box-shadow: var(--card-shadow-hover);
             transform: translateY(-3px);
         }
         .tile .art {
@@ -927,6 +972,13 @@
             border: 1px solid var(--line);
             backdrop-filter: blur(8px);
             transition: all .2s ease;
+        }
+        :root[data-theme="dark"] .tile span,
+        @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .tile span } {
+            background: rgba(22, 21, 30, 0.88);
+            border-color: rgba(255, 255, 255, 0.14);
+            color: #ffffff;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
         }
         .tile:hover span {
             color: var(--brand);
@@ -963,7 +1015,7 @@
             justify-content: space-between;
             gap: 20px;
             flex-wrap: wrap;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            box-shadow: var(--card-shadow);
         }
         .reassurance-banner::after {
             content: "";
@@ -1108,11 +1160,11 @@
             display: flex;
             flex-direction: column;
             transition: box-shadow .25s ease, transform .25s ease, border-color .25s ease;
-            box-shadow: 0 4px 16px rgba(168, 43, 89, 0.04);
+            box-shadow: var(--card-shadow);
         }
         .card:hover {
             border-color: var(--brand-border);
-            box-shadow: 0 12px 30px rgba(168, 43, 89, 0.12);
+            box-shadow: var(--card-shadow-hover);
             transform: translateY(-3px);
         }
         .card:hover .g {
@@ -1287,6 +1339,12 @@
             border: 1px solid rgba(168, 43, 89, 0.3);
             box-shadow: 0 16px 40px rgba(70, 20, 44, 0.16);
         }
+        :root[data-theme="dark"] .promo,
+        @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .promo } {
+            background: linear-gradient(135deg, #150f1a 0%, #261122 50%, #3a1127 100%);
+            border-color: rgba(244, 63, 122, 0.28);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55);
+        }
         .promo::before {
             content: "";
             position: absolute;
@@ -1396,6 +1454,7 @@
         }
         .md {
             background: var(--bg);
+            border: 1px solid var(--line);
             border-radius: 26px;
             max-width: 880px;
             width: 100%;
@@ -1407,6 +1466,12 @@
             padding: 24px;
             position: relative;
             box-shadow: 0 20px 50px rgba(0,0,0,.25);
+        }
+        :root[data-theme="dark"] .md,
+        @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .md } {
+            background: #131219;
+            border-color: #282635;
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.75);
         }
         @media(max-width: 720px) {
             .md {
@@ -1535,6 +1600,12 @@
             padding-top: calc(20px + env(safe-area-inset-top, 0px));
             padding-bottom: calc(20px + env(safe-area-inset-bottom, 0px));
             box-shadow: 0 0 50px rgba(0,0,0,.35);
+        }
+        :root[data-theme="dark"] .dr,
+        @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .dr } {
+            background: #111017;
+            border-right: 1px solid #252330;
+            box-shadow: 0 0 60px rgba(0, 0, 0, 0.7);
         }
         .dr.on {
             transform: none;
