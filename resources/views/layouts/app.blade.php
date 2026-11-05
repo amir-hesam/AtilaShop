@@ -13,61 +13,104 @@
         })();
     </script>
     
-    <!-- Digikala Official Font Preload -->
-    <link rel="preload" href="/fonts/digikala-variable.woff2" as="font" type="font/woff2" crossorigin>
+    <!-- IRANYekan Official Font Preload -->
+    <link rel="preload" href="/fonts/IRANYekanWebRegular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/IRANYekanWebBold.woff2" as="font" type="font/woff2" crossorigin>
     
     <style>
-        /* Digikala & IRANSansX Variable Webfont */
+        /* IRANYekan Official Webfonts */
         @font-face {
-            font-family: 'Digikala';
+            font-family: 'IRANYekan';
             font-style: normal;
-            font-weight: 100 1000;
+            font-weight: 100;
             font-display: swap;
-            src: url('/fonts/digikala-variable.woff2') format('woff2-variations'),
-                 url('/fonts/digikala-variable.woff2') format('woff2');
+            src: url('/fonts/IRANYekanWebThin.woff2') format('woff2');
         }
         @font-face {
-            font-family: 'Digikala';
+            font-family: 'IRANYekan';
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: url('/fonts/IRANYekanWebLight.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'IRANYekan';
             font-style: normal;
             font-weight: 400;
             font-display: swap;
-            src: url('/fonts/digikala-variable.woff2') format('woff2');
+            src: url('/fonts/IRANYekanWebRegular.woff2') format('woff2');
         }
         @font-face {
-            font-family: 'Digikala';
+            font-family: 'IRANYekan';
             font-style: normal;
             font-weight: 500;
             font-display: swap;
-            src: url('/fonts/digikala-variable.woff2') format('woff2');
+            src: url('/fonts/IRANYekanWebMedium.woff2') format('woff2');
         }
         @font-face {
-            font-family: 'Digikala';
+            font-family: 'IRANYekan';
             font-style: normal;
             font-weight: 600;
             font-display: swap;
-            src: url('/fonts/digikala-variable.woff2') format('woff2');
+            src: url('/fonts/IRANYekanWebBold.woff2') format('woff2');
         }
         @font-face {
-            font-family: 'Digikala';
+            font-family: 'IRANYekan';
             font-style: normal;
             font-weight: 700;
             font-display: swap;
-            src: url('/fonts/digikala-variable.woff2') format('woff2');
+            src: url('/fonts/IRANYekanWebBold.woff2') format('woff2');
         }
         @font-face {
-            font-family: 'Digikala';
+            font-family: 'IRANYekan';
             font-style: normal;
             font-weight: 800;
             font-display: swap;
-            src: url('/fonts/digikala-variable.woff2') format('woff2');
+            src: url('/fonts/IRANYekanWebExtraBold.woff2') format('woff2');
         }
         @font-face {
-            font-family: 'IRANSansX';
+            font-family: 'IRANYekan';
             font-style: normal;
-            font-weight: 100 1000;
+            font-weight: 900;
             font-display: swap;
-            src: url('/fonts/digikala-variable.woff2') format('woff2-variations'),
-                 url('/fonts/digikala-variable.woff2') format('woff2');
+            src: url('/fonts/IRANYekanWebBlack.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'IRANYekan';
+            font-style: normal;
+            font-weight: 950;
+            font-display: swap;
+            src: url('/fonts/IRANYekanWebExtraBlack.woff2') format('woff2');
+        }
+
+        /* IranYekan and IRANYekanWeb Aliases */
+        @font-face {
+            font-family: 'IranYekan';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url('/fonts/IRANYekanWebRegular.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'IranYekan';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url('/fonts/IRANYekanWebBold.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'IRANYekanWeb';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url('/fonts/IRANYekanWebRegular.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'IRANYekanWeb';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url('/fonts/IRANYekanWebBold.woff2') format('woff2');
         }
 
         :root {
@@ -170,7 +213,7 @@
 
         body {
             margin: 0;
-            font-family: 'Digikala', 'IRANSansX', 'IRANSans', system-ui, -apple-system, BlinkMacSystemFont, Tahoma, sans-serif;
+            font-family: 'IRANYekan', 'IranYekan', 'IRANYekanWeb', 'IRANSansX', 'Digikala', system-ui, -apple-system, BlinkMacSystemFont, Tahoma, sans-serif;
             background: var(--bg);
             background-image: radial-gradient(120% 75% at 50% -8%, #ffe8f2 0%, var(--bg) 60%);
             background-attachment: fixed;

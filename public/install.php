@@ -338,26 +338,60 @@ $detectedUrl = $protocol . $host;
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>نصب‌کننده خودکار فروشگاه آتیلاشاپ | AtilaShop cPanel Installer</title>
     
-    <!-- Digikala Official Font Preload -->
-    <link rel="preload" href="/fonts/digikala-variable.woff2" as="font" type="font/woff2" crossorigin>
+    <!-- IRANYekan Official Font Preload -->
+    <link rel="preload" href="/fonts/IRANYekanWebRegular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/IRANYekanWebBold.woff2" as="font" type="font/woff2" crossorigin>
     
     <style>
-        /* Digikala & IRANSansX Variable Webfont */
+        /* IRANYekan Official Webfonts */
         @font-face {
-            font-family: 'Digikala';
+            font-family: 'IRANYekan';
             font-style: normal;
-            font-weight: 100 1000;
+            font-weight: 400;
             font-display: swap;
-            src: url('/fonts/digikala-variable.woff2') format('woff2-variations'),
-                 url('/fonts/digikala-variable.woff2') format('woff2');
+            src: url('/fonts/IRANYekanWebRegular.woff2') format('woff2');
         }
         @font-face {
-            font-family: 'IRANSansX';
+            font-family: 'IRANYekan';
             font-style: normal;
-            font-weight: 100 1000;
+            font-weight: 500;
             font-display: swap;
-            src: url('/fonts/digikala-variable.woff2') format('woff2-variations'),
-                 url('/fonts/digikala-variable.woff2') format('woff2');
+            src: url('/fonts/IRANYekanWebMedium.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'IRANYekan';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url('/fonts/IRANYekanWebBold.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'IranYekan';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url('/fonts/IRANYekanWebRegular.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'IranYekan';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url('/fonts/IRANYekanWebBold.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'IRANYekanWeb';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url('/fonts/IRANYekanWebRegular.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'IRANYekanWeb';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url('/fonts/IRANYekanWebBold.woff2') format('woff2');
         }
         :root {
             --bg: #f8fafc;
@@ -375,7 +409,7 @@ $detectedUrl = $protocol . $host;
         * { box-sizing: border-box; }
         body {
             margin: 0;
-            font-family: 'Digikala', 'IRANSansX', 'IRANSans', system-ui, -apple-system, BlinkMacSystemFont, Tahoma, sans-serif;
+            font-family: 'IRANYekan', 'IranYekan', 'IRANYekanWeb', 'IRANSansX', 'Digikala', system-ui, -apple-system, BlinkMacSystemFont, Tahoma, sans-serif;
             background: var(--bg);
             color: var(--ink);
             line-height: 1.6;
